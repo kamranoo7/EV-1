@@ -179,7 +179,7 @@ async function filter(){
   let res=await fetch(pitchURL)
   let data=await res.json()
   let x=data.filter((el)=>{
-return el.founder==searchByInput.value
+return el.title==searchByInput.value
   })
   append(x)
 }
