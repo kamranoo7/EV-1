@@ -11,7 +11,7 @@
     "start": "vite",
     "live": "npm run start",
     "build": "vite build --port=8080",
-    "server": "node server.js",
+    "server": "json-server --watch db.json --port 9090",
     "watch": "npm run server & npm run start",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",

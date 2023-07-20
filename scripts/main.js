@@ -170,10 +170,19 @@ async function Food1(){
   
   append(x)
 }
-//  let searchBySelect = document.getElementById("search-by-select");
-//  let searchByInput = document.getElementById("search-by-input");
-//  let searchByButton = document.getElementById("search-by-button");
-//map data
+  let searchBySelect = document.getElementById("search-by-select");
+  let searchByInput = document.getElementById("search-by-input");
+  let searchByButton = document.getElementById("search-by-button");
+  let xx=searchBySelect.value
+searchByButton.addEventListener('click',filter)
+async function filter(){
+  let res=await fetch(pitchURL)
+  let data=await res.json()
+  let x=data.filter((el)=>{
+return el.founder==searchByInput.value
+  })
+  append(x)
+}
 let getdata=async()=>{
   let res=await fetch(pitchURL)
   let data=await res.json()
